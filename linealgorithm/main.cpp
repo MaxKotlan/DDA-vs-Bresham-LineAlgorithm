@@ -41,31 +41,60 @@ void DigitalDifferentialAnalyzer(int x1, int y1, int x2, int y2) {
 
 void BresenhamLineAlgorithm(int x1, int y1, int x2, int y2) {
 
-	int dx = x2 - x1;
-	int dy = y2 - y1;
-	int steps, k;
-	steps = dx;
-	int x, y;
-	int p0 = (2 * dy) - dx;
+	int dx, dy, steps, k, x, y, p0;
 
-	screenbuffer[x1 + width * y1] = 'B';
-	x = x1;
-	y = y1;
 
-	for (k = 0; k < steps; k++)
-	{
-		if (p0 < 2)
+	dx = x2 - x1;
+	dy = y2 - y1;
+	
+	if (dy > dx) {
+
+		steps = dy;
+		p0 = (2 * dy) - dx;
+
+		screenbuffer[x1 + width * y1] = 'B';
+		x = x1;
+		y = y1;
+
+		for (k = 0; k < steps; k++)
 		{
-			p0 = p0 + (2 * dy);
-			x += 1;
+			if (p0 < 0)
+			{
+				p0 = p0 + (2 * dx);
+				y += 1;
+			}
+			else
+			{
+				p0 = p0 + (2 * dx) - (2 * dy);
+				x += 1;
+				y += 1;
+			}
+			screenbuffer[x + width * y] = 'B';
 		}
-		else
+	}
+	else {
+		steps = dx;
+		p0 = (2 * dy) - dx;
+
+		screenbuffer[x1 + width * y1] = 'B';
+		x = x1;
+		y = y1;
+
+		for (k = 0; k < steps; k++)
 		{
-			p0 = p0 + (2 * dy) - (2 * dx);
-			x += 1;
-			y += 1;
+			if (p0 < 0)
+			{
+				p0 = p0 + (2 * dy);
+				x += 1;
+			}
+			else
+			{
+				p0 = p0 + (2 * dy) - (2 * dx);
+				x += 1;
+				y += 1;
+			}
+			screenbuffer[x + width * y] = 'B';
 		}
-		screenbuffer[x + width * y] = 'B';
 	}
 }
 
@@ -73,8 +102,8 @@ int main() {
 	for (int i = 0; i < width * height; i++)
 		screenbuffer[i] = '`';
 	//print();
-	DigitalDifferentialAnalyzer(3, 5, 45, 67);
-	BresenhamLineAlgorithm(3, 5, 45, 67);
+	DigitalDifferentialAnalyzer(3, 5, 45, 37);
+	BresenhamLineAlgorithm(3, 5, 45, 37);
 	print();
 	//DigitalDifferentialAnalyzer(12, 5, 70, 67);
 	//DigitalDifferentialAnalyzer(45, 67, 53, 53);

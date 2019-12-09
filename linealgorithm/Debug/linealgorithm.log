@@ -1,4 +1,4 @@
 ﻿  main.cpp
-C:\Users\max\source\repos\linealgorithm\linealgorithm\main.cpp(31,10): warning C4244:  'initializing': conversion from 'int' to 'float', possible loss of data
-C:\Users\max\source\repos\linealgorithm\linealgorithm\main.cpp(32,10): warning C4244:  'initializing': conversion from 'int' to 'float', possible loss of data
-  linealgorithm.vcxproj -> C:\Users\max\source\repos\linealgorithm\Debug\linealgorithm.exe
+C:\Users\maxma\Desktop\DDA-vs-Bresham-LineAlgorithm\linealgorithm\main.cpp(31,10): warning C4244:  'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\maxma\Desktop\DDA-vs-Bresham-LineAlgorithm\linealgorithm\main.cpp(32,10): warning C4244:  'initializing': conversion from 'int' to 'float', possible loss of data
+  linealgorithm.vcxproj -> C:\Users\maxma\Desktop\DDA-vs-Bresham-LineAlgorithm\Debug\linealgorithm.exe
